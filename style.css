@@ -1,0 +1,126 @@
+/* RESET E CONFIGURAÇÃO GERAL */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f172a;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; /* Faz o título ficar em cima e a calculadora embaixo */
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 20px; /* Cria um espaçamento agradável entre o título e a calculadora */
+}
+
+/* Estilo para o Título H1 */
+h1 {
+  color: #ffffff;
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* ESTRUTURA DO CORPO DA CALCULADORA */
+.calculadora {
+  background-color: #ffffff;
+  border: 3px solid #334155;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* ÁREA DO VISOR */
+.painel-visor {
+  background-color: #0d131a;
+  border: 2px solid #1e293b;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  text-align: right;
+  min-height: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.visor-expressao {
+  color: #94a3b8;
+  font-size: 1rem;
+  font-weight: bold;
+  min-height: 1.2rem;
+  word-wrap: break-word;
+}
+
+.visor-input {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: right;
+  width: 100%;
+  outline: none;
+}
+
+/* TECLADO E GRADE DE BOTÕES (GRID DE 4 COLUNAS) */
+.teclado {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+/* ESTILO BASE DOS BOTÕES */
+.btn {
+  background-color: #24303e; /* Cor escura padrão dos números */
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 16px 0;
+  border: 1px solid #334155;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: filter 0.1s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* CORES ESPECÍFICAS DA IMAGEM DE REFERÊNCIA */
+.btn-limpar {
+  background-color: #e55353; /* Vermelho/Coral para o 'C' */
+  color: #ffffff;
+}
+
+.btn-funcao {
+  background-color: #24303e;
+  color: #ffffff;
+}
+
+.btn-operador {
+  background-color: #f59e0b; /* Laranja para as 4 operações (+, -, x, ÷) */
+  color: #ffffff;
+}
+
+.btn-igual {
+  grid-column: span 2;
+  background-color: #2563eb; /* Azul brilhante para o '=' */
+  color: #ffffff;
+}
+
+/* ACESSIBILIDADE: FOCO VISÍVEL DE ALTO CONTRASTE (NAVEGAÇÃO POR TECLADO) */
+.btn:focus {
+  outline: 3px solid #000000 !important;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 5px #bbbe02;
+}
