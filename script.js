@@ -32,15 +32,15 @@ function adicionarNumero(numero) {
 function adicionarPonto() {
   let visor = document.getElementById("visor");
 
-  if (limparNoProximoDigito) {
-    visor.value = "0.";
+  if (limparNoProximoDigito) { //Se o visor estiver pronto para limpar,
+    visor.value = "0."; //ele coloca o ponto decimal no visor.
     limparNoProximoDigito = false;
     return;
   }
 
   // Validação: Impede múltiplos pontos no mesmo número
-  if (!visor.value.includes(".")) {
-    visor.value = visor.value + ".";
+  if (!visor.value.includes(".")) { //Se o visor não tiver ponto decimal,
+    visor.value = visor.value + "."; //ele adiciona um ponto decimal.
     falar("ponto");
   }
 }
@@ -139,15 +139,15 @@ function limpar() {
 function apagarUltimo() {
   let visor = document.getElementById("visor");
 
-  if (visor.value === "Erro" || limparNoProximoDigito) {
-    limpar();
+  if (visor.value === "Erro" || limparNoProximoDigito) { //Vai verificar se o visor está com erro ou se já calculado.
+    limpar(); //Se sim, ele limpa o visor.
     return;
   }
 
-  if (visor.value.length > 1) {
-    visor.value = visor.value.slice(0, -1);
+  if (visor.value.length > 1) { //Aqui ele verifica se o visor tem mais de um caractere,
+    visor.value = visor.value.slice(0, -1);//se sim, ele apaga o último caractere.
   } else {
-    visor.value = "0";
+    visor.value = "0";//Caso contrário, ele coloca o visor como 0.
   }
 
   falar("Apagado");
