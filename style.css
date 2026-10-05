@@ -5,8 +5,31 @@
   padding: 0;
 }
 
+:root{
+  --pagina_fundo: #000000;
+  --calc_fundo: #3b3d5a;
+
+  --btn_num_fundo: #edf2f4;
+  --btn_num_texto: #000000;
+  --btn_num_hover: #cfd3d4;
+
+  --btn_ope_fundo: #f08a16;
+  --btn_ope_texto: #fff;
+  --btn_ope_hover: #927a6c;
+
+  --btn_esp_fundo: #0078D7;
+  --btn_esp_texto: #fff;
+  --btn_esp_hover: #005a9e;
+
+  --btn_lmp_fundo: #ef233c;
+  --btn_lmp_texto: #fff;
+
+  --visor_fundo: #1452b1;
+  --visor_texto: #fff;
+}
+
 body {
-  background-color: #0f172a;
+  background-color: var(--pagina_fundo);
   font-family: Arial, sans-serif;
   min-height: 100vh;
   display: flex;
@@ -24,9 +47,15 @@ h1 {
   text-align: center;
 }
 
+h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 /* ESTRUTURA DO CORPO DA CALCULADORA */
 .calculadora {
-  background-color: #ffffff;
+  background-color: var(--calc_fundo);
   border: 3px solid #334155;
   border-radius: 8px;
   padding: 16px;
@@ -37,7 +66,7 @@ h1 {
 
 /* ÁREA DO VISOR */
 .painel-visor {
-  background-color: #0d131a;
+  background-color: var(--visor_fundo);
   border: 2px solid #1e293b;
   border-radius: 6px;
   padding: 12px 16px;
@@ -77,8 +106,8 @@ h1 {
 
 /* ESTILO BASE DOS BOTÕES */
 .btn {
-  background-color: #24303e; /* Cor escura padrão dos números */
-  color: #ffffff;
+  background-color: var(--btn_num_fundo); /* Cor escura padrão dos números */
+  color: var(--btn_num_texto);
   font-size: 1.5rem;
   font-weight: bold;
   padding: 16px 0;
@@ -98,13 +127,13 @@ h1 {
 
 /* CORES ESPECÍFICAS DA IMAGEM DE REFERÊNCIA */
 .btn-limpar {
-  background-color: #e55353; /* Vermelho/Coral para o 'C' */
-  color: #ffffff;
+  background-color: var(--btn_lmp_fundo); /* Vermelho/Coral para o 'C' */
+  color: var(--btn_lmp_texto);
 }
 
 .btn-funcao {
   background-color: #24303e;
-  color: #ffffff;
+  color: var(--btn_esp_texto);
 }
 
 .btn-operador {
